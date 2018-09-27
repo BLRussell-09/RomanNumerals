@@ -7,7 +7,7 @@ namespace RomanNumerics.Models
 {
     public class Converter
     {
-        public void conRom(int numbers)
+        public string conRom(int numbers)
         {
             var numberList = new List<int>{0,0,0,0};
             var romanNumeral = new List<string>{"","","",""};
@@ -40,14 +40,14 @@ namespace RomanNumerics.Models
             var huns = numberList[1];
             var thou = numberList[0];
 
-            //Thousands
+            // Thousands
             if (thou < 4 && thou > 0)
             {
                 string cCount = new String('M', thou);
                 romanNumeral[0] = cCount;
             }
            
-            //Hundreds
+            // Hundreds
             if (huns < 4 && huns > 0)
             {
                 string cCount = new String('C', huns);
@@ -71,7 +71,7 @@ namespace RomanNumerics.Models
                 romanNumeral[1] = "CM";
             }
 
-            // Value in the tens position
+            // Tens
             if (tens < 4 && tens > 0)
             {
                 string xCount = new String('X', tens);
@@ -95,7 +95,7 @@ namespace RomanNumerics.Models
                 romanNumeral[2] = "XC";
             }
 
-            // Value in the ones position
+            // Ones
             if (ones < 4 && ones > 0)
             {
                 string iCount = new String('I', ones);
@@ -122,6 +122,7 @@ namespace RomanNumerics.Models
             }
 
             Console.WriteLine(String.Join(", ", romanNumeral.ToArray()).Replace(" ", "").Replace("," , ""));
+            return String.Join(", ", romanNumeral.ToArray()).Replace(" ", "").Replace(",", "");
         }
 
         
