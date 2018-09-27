@@ -1,12 +1,19 @@
-﻿using System;
+﻿using RomanNumerics.Models;
+using System;
 
 namespace RomanNumerics
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      Console.WriteLine("Hello World!");
-    }
-  }
+        static void Main(string[] args)
+        {
+            
+            var doConvert = new Converter();
+
+            doConvert.convertToRoman(30);
+
+
+            Console.Read();
+        }
+      }
 }
