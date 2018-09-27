@@ -9,10 +9,7 @@ namespace RomanNumerics
         {
             
             var doConvert = new Converter();
-
-            doConvert.convertToRoman(30);
-
-
+            doConvert.conRom(891);   
             Console.Read();
         }
       }
